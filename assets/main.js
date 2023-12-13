@@ -132,4 +132,26 @@ const icons = [
 
 icons.forEach((icon) => {
   console.log(`Nome: ${icon.name}, type: ${icon.type}, family: ${icon.family}`);
+
+  const div = document.createElement("div");
+  div.className = "card text-center m-3";
+  div.style.width = "18rem";
+  console.log(div);
+
+  const secondDiv = document.createElement("div");
+  secondDiv.className = "card-body";
+  console.log(secondDiv, "secondo div");
+
+  const iconElement = document.createElement("i");
+  iconElement.className = icon.prefix && icon.name;
+  console.log(iconElement);
+
+  const title = document.createElement("h4");
+  title.className = "card-title p-3";
+  console.log(title);
+
+  div.appendChild(secondDiv);
+  div.appendChild(iconElement);
+  div.appendChild(title);
+  document.getElementById("card-icon").appendChild(div);
 });
