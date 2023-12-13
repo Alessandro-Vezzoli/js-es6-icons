@@ -131,7 +131,9 @@ const icons = [
 // visualizzare un box per ogni icona
 
 icons.forEach((icon) => {
-  console.log(`Nome: ${icon.name}, type: ${icon.type}, family: ${icon.family}`);
+  console.log(
+    `prefix: ${icon.prefix}, Nome: ${icon.name},  family: ${icon.family}`
+  );
 
   const div = document.createElement("div");
   div.className = "card text-center m-3";
@@ -143,11 +145,16 @@ icons.forEach((icon) => {
   console.log(secondDiv, "secondo div");
 
   const iconElement = document.createElement("i");
-  iconElement.className = icon.prefix && icon.name;
+  iconElement.className = "fa-solid fa-xl pb-3" + " " + icon.prefix + icon.name;
+  //aggiungere colore all'icona
+
+  iconElement.style.color = icon.color;
   console.log(iconElement);
 
-  const title = document.createElement("h4");
-  title.className = "card-title p-3";
+  const title = document.createElement("h6");
+  title.className = "card-title text-uppercase p-2";
+
+  title.textContent = icon.name;
   console.log(title);
 
   div.appendChild(secondDiv);
