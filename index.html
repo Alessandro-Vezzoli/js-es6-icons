@@ -29,11 +29,12 @@
           id="selected"
           class="form-select"
           aria-label="Default select example"
+          onchange="ciclo()"
         >
-          <option selected>Seleziona un Filtro per tipo</option>
-          <option onchange="filterSelection('User')">User</option>
-          <option onchange="filterSelection('Vegetable')">Vegetable</option>
-          <option onchange="filterSelection('Animal')">Animal</option>
+          <option value="">Seleziona un Filtro per tipo</option>
+          <option value="user">User</option>
+          <option value="vegetable">Vegetable</option>
+          <option value="animal">Animal</option>
         </select>
       </div>
 

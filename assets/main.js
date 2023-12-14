@@ -128,32 +128,25 @@ const icons = [
   },
 ];
 
-// visualizzare un box per ogni icona
+function ciclo() {
+  const type = document.getElementById("selected").value;
+  let localicons = icons;
 
-icons.forEach((icon) => {
-  /*console.log(
-    `prefix: ${icon.prefix}, Nome: ${icon.name},  family: ${icon.family}`
-  );*/
-
-  const cardIcon = `
+  if (type) {
+    localicons = localicons.filter((typeIcon) => typeIcon.type == type);
+  }
+  // visualizzare un box per ogni icona
+  let cardIcon = "";
+  localicons.forEach((icon) => {
+    cardIcon += `
 <div class="card text-center">
   <div class="card-body">
     <i class="card-title  fa-solid fa-xl ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
     <h5 class="card-text m-3 text-uppercase">${icon.name}</h5>
   </div>
 </div>`;
-  console.log(cardIcon);
-
+  });
   document.getElementById("card-icon").innerHTML = cardIcon;
-});
+}
 
-// aggiungere un select che quando selezioni filtra le icone dal tipo
-
-let typeUser = icons.filter((typeIcon) => typeIcon.type == "user");
-console.log(typeUser);
-
-let typeVegetable = icons.filter((typeIcon) => typeIcon.type == "vegetable");
-console.log(typeVegetable);
-
-let typeAnimal = icons.filter((typeIcon) => typeIcon.type == "animal");
-console.log(typeAnimal);
+ciclo();
