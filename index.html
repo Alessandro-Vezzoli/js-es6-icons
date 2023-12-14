@@ -23,11 +23,21 @@
   </head>
   <body>
     <div class="container mt-5">
-      <div class="d-flex justify-content-center">
-        <h1 class="text-center">FontIcons</h1>
+      <div class="justify-content-center">
+        <h1 class="text-center mb-4">FontIcons</h1>
+        <select
+          id="selected"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Seleziona un Filtro per tipo</option>
+          <option onchange="filterSelection('User')">User</option>
+          <option onchange="filterSelection('Vegetable')">Vegetable</option>
+          <option onchange="filterSelection('Animal')">Animal</option>
+        </select>
       </div>
 
-      <div class="mt-5">
+      <div class="mt-4">
         <div id="card-icon" class="row row-cols-1 row-cols-md-3"></div>
       </div>
     </div>

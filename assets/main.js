@@ -131,34 +131,29 @@ const icons = [
 // visualizzare un box per ogni icona
 
 icons.forEach((icon) => {
-  console.log(
+  /*console.log(
     `prefix: ${icon.prefix}, Nome: ${icon.name},  family: ${icon.family}`
-  );
+  );*/
 
-  const div = document.createElement("div");
-  div.className = "card text-center m-3";
-  div.style.width = "18rem";
-  console.log(div);
+  const cardIcon = `
+<div class="card text-center">
+  <div class="card-body">
+    <i class="card-title  fa-solid fa-xl ${icon.prefix}${icon.name}" style="color:${icon.color}"></i>
+    <h5 class="card-text m-3 text-uppercase">${icon.name}</h5>
+  </div>
+</div>`;
+  console.log(cardIcon);
 
-  const secondDiv = document.createElement("div");
-  secondDiv.className = "card-body";
-  console.log(secondDiv, "secondo div");
-
-  const iconElement = document.createElement("i");
-  iconElement.className = "fa-solid fa-xl pb-3" + " " + icon.prefix + icon.name;
-  //aggiungere colore all'icona
-
-  iconElement.style.color = icon.color;
-  console.log(iconElement);
-
-  const title = document.createElement("h6");
-  title.className = "card-title text-uppercase p-2";
-
-  title.textContent = icon.name;
-  console.log(title);
-
-  div.appendChild(secondDiv);
-  div.appendChild(iconElement);
-  div.appendChild(title);
-  document.getElementById("card-icon").appendChild(div);
+  document.getElementById("card-icon").innerHTML = cardIcon;
 });
+
+// aggiungere un select che quando selezioni filtra le icone dal tipo
+
+let typeUser = icons.filter((typeIcon) => typeIcon.type == "user");
+console.log(typeUser);
+
+let typeVegetable = icons.filter((typeIcon) => typeIcon.type == "vegetable");
+console.log(typeVegetable);
+
+let typeAnimal = icons.filter((typeIcon) => typeIcon.type == "animal");
+console.log(typeAnimal);
